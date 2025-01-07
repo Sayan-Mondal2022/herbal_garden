@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% block title %}Title{% endblock %}</title>
+
+    <link rel="stylesheet" href={% static "css/base.css" %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <header class="navbar-container">
+        <nav class="navbar">
+            <a href={% url "home" %} class="list-links home-logo">
+                <img src={% static 'img/main_logo.png' %} alt="website logo" class="main-logo">
+            </a>
+            
+            <ul class="navigation-bar">
+                <li class="nav-items home"><a href={% url "home" %} class="list-links">Home</a></li>
+                <li class="nav-items"><a href={% url "blog" %} class="list-links">Blog</a></li>
+                <li class="nav-items">
+                    <a href={% url "explore" %} class="list-links">Explore <i class="fa fa-caret-down" id="dropdown-icon"></i></a>
+                    <ul class="dropdown">
+                        <li class="nav-dropdown"><a href={% url "explore_flowers" %} class="list-links">Flowers</a></li>
+                        <li class="nav-dropdown"><a href={% url "explore_fruits" %} class="list-links">Fruits</a></li>
+                        <li class="nav-dropdown"><a href={% url "explore_leaves" %} class="list-links">Leaves</a></li>
+                        <li class="nav-dropdown"><a href={% url "explore_roots" %} class="list-links">Roots</a></li>
+                        <li class="nav-dropdown"><a href={% url "explore_gums" %} class="list-links">Gums</a></li>
+                    </ul>
+                </li>
+                <li class="nav-items"><a href={% url "services" %} class="list-links">Services</a></li>
+            </ul>
+
+            {% if request.session.user_info %}
+            <ul class="after-login">
+                <li class="nav-items">
+                    <a href="#" class="list-links">Welcome, {{ request.session.user_info.user_name }} <i class="fa fa-caret-down" id="user-dropdown-icon"></i></a>
+                    <ul class="user-dropdown">
+                        <li class="nav-dropdown"><a href={% url "profile" %} class="list-links">Profile</a></li>
+                        <li class="nav-dropdown"><a href={% url "settings" %} class="list-links">Settings</a></li>
+                        <li class="nav-dropdown"><a href={% url "logout" %} class="list-links">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+            {% else %}
+            <ul class="before-login">
+                <li class="nav-items"><a href={% url "login" %} class="list-links">Login</a></li>
+                <li class="nav-items"><a href={% url "user_registration" %} class="list-links">Register</a></li>
+            </ul>
+            {% endif %}
+
+            <form action="{% url 'search_plants' %}" method="GET" class="search-form">
+                <div class="search-container">
+                    <input type="text" name="q" placeholder="Search plants..." value="{{ request.GET.q }}" class="search-input">
+                    <button type="submit" class="search-button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </form>
+
+        </nav>
+    </header>
+
+    <main class="main-content">
+        {% block content %}
+        
+        {% endblock content%}
+
+
+        <button class="note-button"> 
+            <i class="fa fa-pencil"></i> 
+        </button> 
+        
+        <!-- Note Modal --> 
+         <div class="note-modal" style="display: none;"> 
+            <div class="note-modal-content"> 
+                <span id="close-note" class="close-button">&times;</span> 
+                <textarea id="note-textarea" placeholder="Type your note here..."></textarea> 
+                <button id="save-note">Save Note</button> 
+            </div> 
+        </div>
+    
+        <script src="{% static 'js/script.js' %}"></script>
+    </main>
+
+    <footer></footer>
+</body>
+</html>

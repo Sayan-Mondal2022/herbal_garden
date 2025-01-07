@@ -1,0 +1,68 @@
+<!-- templates/search/search_results.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href={% static "css/search.css" %}>
+<div class="search-results-container">
+    <div class="search-header">
+        {% if query %}
+            <h2>Search Results for "{{ query }}"</h2>
+            <p class="results-count">Found {{ results|length }} result{{ results|length|pluralize }}</p>
+        {% else %}
+            <h2>All Plants</h2>
+        {% endif %}
+    </div>
+
+    {% if results %}
+        <div class="plants-grid">
+            {% for plant in results %}
+                <div class="plant-card">
+                    {% if plant.image %}
+                        <img src="{{ plant.image }}" alt="{{ plant.name }}" class="plant-image">
+                    {% else %}
+                        <div class="plant-image-placeholder">
+                            <i class="fa fa-leaf"></i>
+                        </div>
+                    {% endif %}
+                    
+                    <div class="plant-info">
+                        <h3>{{ plant.name }}</h3>
+                        <p class="plant-category">{{ plant.category }}</p>
+                        <p class="plant-description">{{ plant.description|truncatewords:20 }}</p>
+                        
+                        <div class="plant-details">
+                            {% if plant.benefits %}
+                                <div class="benefits">
+                                    <strong>Benefits:</strong>
+                                    <p>{{ plant.benefits|truncatewords:10 }}</p>
+                                </div>
+                            {% endif %}
+                            
+                            {% if plant.uses %}
+                                <div class="uses">
+                                    <strong>Uses:</strong>
+                                    <p>{{ plant.uses|truncatewords:10 }}</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <a href="{% url 'plant_detail' plant._id %}" class="view-details-btn">View Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="no-results">
+            {% if query %}
+                <p>No plants found matching your search.</p>
+                <p>Try different keywords or browse our categories.</p>
+            {% else %}
+                <p>Start searching to discover plants!</p>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

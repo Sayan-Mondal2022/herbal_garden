@@ -1,0 +1,202 @@
+.sections{
+    /* border: 1px solid black; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 8px;
+    padding: 16px;
+}
+
+#hero-section{
+    height: 50vh;
+    background-image:url("https://images.unsplash.com/photo-1470058869958-2a77ade41c02?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+    
+}
+#hero-section-main-heading{
+    color: rgb(255, 255, 0);
+    /* color: #B7E4C7; */
+    opacity:1;
+    font-size: 42px;
+    font-weight: bold; }
+#side-line{
+        color: rgb(255, 255, 0);
+        /* color: #B7E4C7; */
+        opacity:1;
+        font-size: 32px;
+        font-weight: bold; }
+
+#section1-sub-heading{
+            color: rgb(255, 255, 0);
+            /* color: #B7E4C7; */
+            opacity:1;
+            font-size: 21px;
+            font-weight: bold; }
+#section-explore-options{
+    display: flex;
+    justify-self: center;
+
+    align-items: center;
+
+    height: 35vh;
+}
+
+.section-explore-list-items{
+    list-style: none;
+
+    border: 1px solid black;
+
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 12px;
+    padding: 16px;
+
+    width: 20vw;
+    height: 18vh;
+
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+.section-explore-list-items:hover{
+    cursor: pointer;
+    width: 22vw;
+    height: 20vh;
+
+    border: none;
+
+    font-size: 18px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#section-virtual-tour-img1{
+    height: 45vh;
+
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+#img-container-1{
+    height: 48vh;
+    width: 30vw;
+
+}
+
+#section-virtual-tour-img1:hover{
+    cursor: pointer;
+    height: 48vh;
+}
+
+#section-virtual-tour-desc{
+    margin: 12px;
+    padding: 16px;
+
+    width: 50vw;
+}
+
+#section-virtual-tour-content{
+    margin: 12px;
+    padding: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 52vh;
+}
+
+#img-container-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 12px;
+    padding: 16px;
+}
+
+.section-service-images{
+
+    height: 45vh;
+    width: 24vw;
+    margin: 12px;
+    border-radius: 15px
+}
+
+.anchor{
+    font-style: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn{
+    width: 8vw;
+    height: 5vh;
+
+    border-radius: 12px;
+    outline: none;
+    border: none;
+
+    margin: 12px;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 12px;
+    padding: 16px;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 12px;
+    padding: 16px;
+
+    text-decoration: none;
+    font: inherit;
+    color: inherit;
+
+    width: 12vw;
+    height: 12vh;
+
+    transition: all 0.5s ease;
+}
+
+.links:hover{
+    width: 14vw;
+    height: 14vh;
+
+    font-size: 18px;
+}
+
+#links-heading{
+    margin: 12px;
+}
+
+.link-name{
+    margin: 5px;
+}
+
+.icon-styling{
+    width: 38px;
+
+    transition: all 0.5s ease;
+}
+
+.icon-styling:hover{
+    width: 42px;
+}

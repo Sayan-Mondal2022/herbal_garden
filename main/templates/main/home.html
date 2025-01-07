@@ -1,0 +1,111 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %}Home{% endblock %} 
+
+{% block content%}
+<link rel="stylesheet" href={% static "css/home.css" %}>
+
+<section class="main-container">
+    <section id="hero-section" class="sections">
+        <h1 id="hero-section-main-heading">
+            Step Into the World of Healing Herbs
+        </h1>
+        <span id="side-line">
+            Explore. Learn. Embrace Nature.
+        </span>
+        <span id="section1-sub-heading">
+            Discover the power of medicinal plants from ancient AYUSH traditions through an immersive virtual experience. Your journey into nature’s remedies starts here.
+        </span>
+        <button id="explore-garden" class="btn"><a href={% url "explore" %} class="anchor">Explore</a></button>
+        <button id="virtual-tour" class="btn"><a href={% url "explore" %} class="anchor">Take a virtual tour</a></button>
+    </section>
+
+
+    {% comment %} Section-1 will be considered as the section-features :) {% endcomment %}
+    <section id="section-explore" class="sections">
+        <h3 id="section-explore-heading">Explore Nature’s Healing Wonders</h3>
+        <span id="section-explore-desc">
+            The Explore page is your interactive gateway to understanding the world of medicinal plants. Discover their unique properties, uses, and cultivation methods, all in one place.
+        </span>
+        <span id="section-explore-user-options">
+            What You’ll Find
+        </span>
+        <ul id="section-explore-options">
+            <li class="section-explore-list-items">
+                <strong>Plant Categories </strong> Browse plants grouped by their parts—flowers, fruits, roots, leaves, and gums.
+            </li>
+
+            <li class="section-explore-list-items">
+                <strong>Interactive Grid </strong> Easily navigate through a visually engaging 3x3 layout with plant images and names.
+            </li>
+
+            <li class="section-explore-list-items">
+                <strong>Detailed Profiles </strong> Click to uncover each plant’s habitat, medicinal benefits, and more
+            </li>
+
+            <li class="section-explore-list-items">
+                <strong>Smart Filters </strong> Sort plants by health benefits, region, or type to personalize your journey.
+            </li>
+        </ul>
+    </section>
+    
+    <section id="section-virtual-tour" class="sections">
+        <h3 id="section-virtual-tour-heading">Virtual Tour Description</h3>
+        <section id="section-virtual-tour-content">
+            <span id="section-virtual-tour-desc">
+                Embark on an immersive journey through our Virtual Herbal Garden. The Virtual Tour brings medicinal plants to life with guided themes tailored to your interests. Whether you’re exploring plants for immunity, skincare, or overall health, each tour offers a rich blend of interactive visuals, high-quality images, and informative audio guides.<br>
+                Step into a digitally recreated herbal landscape and experience the essence of traditional AYUSH practices, all from the comfort of your home. Discover, learn, and connect with nature like never before!
+            </span>
+            <div id="img-container-1">
+                <img src={% static "img/section-virtual-tour-img1.jpg" %} alt="" id="section-virtual-tour-img1">
+            </div>
+        </section>
+        <button id="virtual-tour" class="btn"><a href={% url "explore" %} class="anchor">Take a virtual tour</a></button>
+    </section>
+
+    <section id="section-services" class="sections">
+        <h3 id="section-services-heading">
+            Services
+        </h3>
+
+        <span id="section-services-content">
+            Discover a holistic blend of nature and technology with our tailored services. From buying medicinal plants and gardening essentials to exploring immersive virtual tours, our platform is designed to connect you with the therapeutic world of herbal remedies. Whether you're looking to enhance your wellness journey or simply learn about traditional healing practices, our comprehensive offerings make it easy and engaging. Dive into the rich heritage of AYUSH through our curated services, bringing nature closer to your life.
+        </span>
+
+        <section id="img-container-2">
+            <img src="https://th.bing.com/th/id/OIP.6g7FvFLEf4PSecIVgKmfXwHaE9?w=200&h=150&c=7" alt="A scenic view of a sunset" class="section-service-images">
+            <img src="https://th.bing.com/th/id/OIP.KfYzRy9rtzSps3fTOrMzhQHaE8?rs=1&pid=ImgDetMain" alt="A scenic view of a sunset" class="section-service-images">
+            <img src="https://th.bing.com/th/id/OIP.6g7FvFLEf4PSecIVgKmfXwHaE9?w=200&h=150&c=7" alt="A scenic view of a sunset" class="section-service-images">
+
+        </section>
+    </section>
+
+    <section id="connect-us" class="sections">
+        <h3 id="links-heading">Connect us</h3>
+        <section id="container">
+            <a href="https://www.instagram.com/sayan_mondal.24/?hl=en" class="links">
+                <img src={% static "img/instagram-icon.png" %} alt="social-media-links" class="icon-styling">
+                <span class="link-name">Follow us on</span>
+            </a>
+            <a href="#" class="links">
+                <img src={% static "img/facebook-icon.png" %} alt="social-media-links" class="icon-styling">
+                <span class="link-name">Connect to us on</span>
+            </a>
+            <a href="#" class="links">
+                <img src={% static "img/gmail-icon.png" %} alt="social-media-links" class="icon-styling">
+                <span class="link-name">Mail us on</span>
+            </a>
+            <a href="#" class="links">
+                <img src={% static "img/threads-icon.png" %} alt="social-media-links" class="icon-styling">
+                <span class="link-name">Thread us on</span>
+            </a>
+            <a href="#" class="links">
+                <img src={% static "img/twitter-icon.png" %} alt="social-media-links" class="icon-styling">
+                <span class="link-name">Tweet us on</span>
+            </a>
+        </section>
+    </section>
+</section>
+
+{% endblock %}
