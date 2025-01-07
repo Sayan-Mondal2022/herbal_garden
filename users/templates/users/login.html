@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User login</title>
+
+    <link rel="stylesheet" href={% static "css/login.css" %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <main class="wrapper">
+        <section class="login-details">
+            <section id="logo-details">
+                <a href={% url "home" %}>
+                    <img src={% static "img/main-logo.png" %} alt="Main logo" id="main-logo" class="main-logo">
+                </a>
+                <a href={% url "home" %} id="home-text">Herbal Garden</a>
+            </section>
+
+            <form method="POST" class="user-input">
+                {% csrf_token %}
+                <h2>Login</h2>
+            
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            
+                <section class="userName details-input">
+                    <label for="user-name" class="input-text">Email id</label>
+                    {{ form.email }}
+                </section>
+            
+                <section class="userPassword details-input">
+                    <label for="user-password" class="input-text">Password</label>
+                    {{ form.password }}
+                    <button type="button" class="pass"><img src="{% static 'img/password-hidden.png' %}" class="icon"></button>
+                </section>
+            
+                <section class="forgot-password">
+                    <a href={% url "forgot_password" %} class="anchor">Forgot Password?</a>
+                </section>
+            
+                <section class="login-btn">
+                    <button type="submit" class="user-login">Sign in</button>
+                    
+                    <span>Or</span>
+            
+                    <button type="button" class="user-login">
+                        <img src="{% static 'img/google-logo.png' %}" alt="Google icon" class="sign-in-icons">Sign in with Google
+                    </button>
+                    <button type="button" class="user-login">
+                        <img src="{% static 'img/facebook-logo.png' %}" alt="Facebook icon" class="sign-in-icons">Sign in with Facebook
+                    </button>
+                </section>
+            
+                <section class="register">
+                    <a href="{% url 'user_registration' %}" class="anchor">Don't have an account! Register here</a>
+                </section>
+            </form>
+        </section>
+
+        <section class="side-image">
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('user-password');
+            const toggleButton = document.querySelector('.pass');
+            const toggleIcon = toggleButton.querySelector('img');
+            
+            toggleButton.addEventListener('click', function() {
+                // Toggle password visibility
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    toggleIcon.src = "{% static 'img/password-visible.png' %}";
+                } else {
+                    passwordInput.type = 'password';
+                    toggleIcon.src = "{% static 'img/password-hidden.png' %}";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

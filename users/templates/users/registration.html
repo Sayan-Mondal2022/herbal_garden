@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+    <section class="wrapper">
+        <section class="side-image">
+        </section>
+
+        <section class="content">
+
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <section id="page-logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'img/main-logo.png' %}" alt="Main logo" id="main-logo" class="main-logo">
+                </a>
+                <a href="{% url 'home' %}" id="home-text">Herbal Garden</a>
+            </section>
+    
+            <section class="user-input">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    
+                    <!-- Use Django form fields dynamically -->
+                    <section class="input-block">
+                        <label for="id_user_name">User Name</label>
+                        {{ form.user_name }}
+                    </section>
+    
+                    <section class="input-block">
+                        <label for="id_email">Email Id</label>
+                        {{ form.email }}
+                    </section>
+    
+                    <section class="input-block">
+                        <label for="id_password">Password</label>
+                        {{ form.password }}
+                    </section>
+    
+                    <section class="input-block">
+                        <label for="id_confirm_password">Confirm Password</label>
+                        {{ form.confirm_password }}
+                    </section>
+                    
+                    <button type="submit" id="submit-btn">Submit</button>
+                </form>
+            </section>
+        </section>
+    </section>
+</body>
+</html>

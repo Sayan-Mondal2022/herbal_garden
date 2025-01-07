@@ -1,0 +1,170 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #2D6A4F;
+    font-size: 17px;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#home-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/* Wrapper */
+.wrapper {
+    margin: 16px;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Side Image Section */
+.side-image {
+    width: 40vw;
+    height: 85vh;
+    border-radius: 10px;
+    background-image: url("../img/login-side.jpeg");
+    background-position: center;
+    background-size: cover;
+    /* border: 2px solid #000; */
+}
+
+/* Content Section */
+.content {
+    width: 40vw;
+    height: 85vh;
+    background-color: #1B4332;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Page Logo */
+#page-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#main-logo {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+/* Messages Section */
+.messages {
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #D9ED92;
+    color: #1B4332;
+}
+
+.messages li {
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.messages .error {
+    background-color: #E63946;
+    color: #fff;
+}
+
+.messages .success {
+    background-color: #52B788;
+    color: #fff;
+}
+
+/* User Input Section */
+.user-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-block {
+    width: 80%;
+    margin: 10px 0;
+}
+
+.input-block label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.input-block input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #D8F3DC;
+    color: #000;
+    outline: none;
+}
+
+.input-block input:focus {
+    border-color: #52B788;
+    box-shadow: 0 0 5px #52B788;
+}
+
+/* Submit Button */
+#submit-btn {
+    width: 80%;
+    padding: 12px;
+    background-color: #40916C;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#submit-btn:hover {
+    background-color: #2D6A4F;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .side-image,
+    .content {
+        width: 90%;
+        height: auto;
+    }
+}

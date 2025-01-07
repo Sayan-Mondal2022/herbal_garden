@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #2D6A4F;
+    font-size: 17px;
+}
+
+#home-text{
+    text-decoration: none;
+    color: inherit;
+    margin: 5px;
+}
+
+.wrapper{ 
+    margin: 16px;
+    height: 95vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.login-details{
+    border: 2px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 40vw;
+    height: 85vh;
+    padding: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Logo Part: */
+#logo-details{
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-logo{
+    width: 45px;
+    margin: 8px;
+}
+
+/* User-Name and User-Password part: */
+.user-input{
+    border-radius: 20px;
+    width: 70%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 12px;
+    margin: 18px;
+}
+
+.user-input h2{
+    margin: 18px;
+}
+
+.details-input{
+    border: 1px solid black;
+    border-radius: 15px;
+
+    padding: 3px;
+    margin: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 22vw;
+    height: 6vh;
+} 
+
+#user-name{
+    outline: none;
+    border: none;
+    font: inherit;
+    background: transparent;
+
+    width: 15vw;
+    height: 5vh;
+
+    padding: 2px;
+    margin: 8px;
+}
+
+#user-password{
+    outline: none;
+    border: none;
+    font: inherit;
+    background: transparent;
+
+    width: 14vw;
+    height: 5vh;
+
+    padding: 2px;
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+.input-text{
+    margin-right: auto;
+    margin-left: 3px;
+
+    cursor: pointer;
+}
+
+.pass{
+    margin-right: 2px;
+    margin-left: 2px;
+    cursor: pointer;
+
+    border: none;
+    background: none;
+}
+
+.icon{
+    width: 18px;
+}
+
+/* Forgot Password: */
+.forgot-password{
+    margin: 10px auto 10px 30px;
+}
+
+.anchor{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Sign-in Part: */
+.login-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-login{
+    width: 22vw;
+    height: 6vh;
+    margin: 10px;
+
+    font: inherit;
+    color: inherit;
+    border-radius: 15px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.user-login:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.sign-in-icons{
+    width: 20px;
+    margin: 5px;
+}
+
+.register{
+    margin: 10px;
+}
+
+.side-image{
+    border: 1px solid black;
+    width: 40vw;
+    height: 85vh;
+
+    background-image: url("../img/login-side.jpeg");
+    background-position: center;
+    background-size: cover;
+}
