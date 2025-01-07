@@ -1,0 +1,80 @@
+.content-box{
+    display : flex;
+    justify-content : center;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 15px;
+    box-sizing: border-box;
+
+    margin: 12px;
+    padding: 18px;
+}
+
+.image-box{
+    margin: 8px;
+    padding: 5px;
+
+    height: 450px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-box{
+    height: max-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-information{
+    margin: 8px;
+    padding: 5px;
+}
+
+.image-class{
+    width: 400px;
+    height: 350px;
+
+    margin: 10px;
+
+    transition: all 0.35s ease;
+    border-radius: 10px;
+}
+
+.image-class:hover{
+    width: 490px;
+    height: 430px;
+
+    border-radius: 12px;
+}
+
+.extra-content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 8px;
+    padding: 5px;
+}
+
+.habitat-box, .medical-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 8px;
+    padding: 5px;
+
+    width: 50%;
+}
+
+.medical-content, .cultivation-content{
+    margin: 8px;
+    padding: 10px;
+}
